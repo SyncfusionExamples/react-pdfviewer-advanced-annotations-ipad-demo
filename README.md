@@ -1,2 +1,2 @@
-# react-pdfviewer-advanced-annotations-ipad-demo
-React PDF Viewer sample showcasing advanced PDF annotations on iPad. Features text highlighting, freehand ink annotations, shape annotations, free text comments, and ink eraser tools for interactive PDF viewing, review, markup, collaboration, and document annotation workflows.
+# Advanced PDF Annotations in React PDF Viewer Hosted on iPad
+This sample demonstrates the advanced annotation capabilities of the Syncfusion PDF Viewer for React. Users can highlight text, create freehand ink annotations, and add shape annotations such as lines, rectangles, and circles to mark important content. It also supports Free Text annotations for adding comments directly to PDF documents and includes an Ink Eraser tool for removing unwanted ink strokes. These features provide an interactive PDF viewing, annotation, review, and collaboration experience on iPad and other devices.
