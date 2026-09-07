@@ -725,17 +725,21 @@ function CustomToolbar() {
   }
 
   function readFile(evt) {
-    let uploadedFiles = evt.target.files;
-    let uploadedFile = uploadedFiles[0];
-    fileName = uploadedFile.name;
-    let reader = new FileReader();
-    reader.readAsDataURL(uploadedFile);
-    let uploadedFileName = fileName;
-    reader.onload = function (e) {
-      let uploadedFileUrl = e.currentTarget.result;
-      viewerRef.current.documentPath = uploadedFileUrl;
-      viewerRef.current.downloadFileName = viewerRef.current.fileName = uploadedFileName;
-    };
+      const uploadedFiles = evt.target.files;
+
+      if (!uploadedFiles || uploadedFiles.length === 0) {
+          return;
+      }
+
+      const uploadedFile = uploadedFiles[0];
+
+      const fileUrl = URL.createObjectURL(uploadedFile);
+
+      viewerRef.current.load(fileUrl, null);
+      viewerRef.current.fileName = uploadedFile.name;
+      viewerRef.current.downloadFileName = uploadedFile.name;
+
+      evt.target.value = '';
   }
 
   function searchInputKeypressed(event) {
