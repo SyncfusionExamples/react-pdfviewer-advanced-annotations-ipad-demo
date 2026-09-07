@@ -1,0 +1,11 @@
+@import '@syncfusion/ej2-tailwind3-theme/styles/pdfviewer/index.css';
+@import './App.css';
+#container_search_box {
+  height: 70px !important
+}
+
+#container_prev_occurrence,
+#container_next_occurrence {
+  border: none !important;
+  box-shadow: none;
+}
