@@ -651,7 +651,7 @@ function CustomToolbar() {
 
     if (viewerRef.current && viewerRef.current.annotation) {
       let annotationMode = 'Rectangle';
-
+       viewerRef.current.annotation.setAnnotationMode('None');
       if (shape === 'Line') {
         annotationMode = 'Line';
       } else if (shape === 'Rectangle') {
@@ -673,6 +673,10 @@ function CustomToolbar() {
     }
 
     if (viewerRef.current && viewerRef.current.annotation) {
+      if(mode !== 'Eraser')
+      {
+        viewerRef.current.annotation.setAnnotationMode('None');
+      }
       if (mode === 'Done') {
         viewerRef.current.annotation.setAnnotationMode('None');
         //viewerRef.current.interactionMode = 'Pan';
@@ -692,10 +696,6 @@ function CustomToolbar() {
         isInkEnabled = false;
         setShowAnnotationDialog(true);
       } else if (mode === 'Ink') {
-        if (activeAnnotation === 'Ink') {
-          return;
-        }
-
         viewerRef.current.annotation.setAnnotationMode('Ink');
         currentAnnotationMode = 'Ink';
         isInkEnabled = true;
